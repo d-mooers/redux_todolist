@@ -16,7 +16,7 @@ const Entry = ({entry, changeEntry, del, id}) => {
                 onChange={() => changeEntry(id)} />
             {entry.text}
             <button 
-                className='btn'
+                className='btn-x'
                 style={{
                     marginLeft:'auto',
                     order:2,

@@ -4,7 +4,6 @@ import { createStore } from 'redux';
 import './index.css';
 import App from './App';
 import todoApp from './reducers/combinedReducer'
-import {addTodo, toggleTodo, deleteTodo} from './actions/todo';
 import { Provider } from 'react-redux';
 
 const store = createStore(todoApp);
