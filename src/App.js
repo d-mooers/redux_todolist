@@ -1,8 +1,8 @@
 import React, { useState, useReducer, Component } from 'react';
 import './App.css';
 import { uuid } from 'uuidv4';
-import Entries from './Entries'
-import AddTodo from './components/AddTodo'
+import TodoList from './containers/TodoList'
+import AddTodo from './containers/AddTodo'
 import Header from './components/Header'
 
 function App() {
@@ -36,8 +36,8 @@ function App() {
   return (
     <>
       <Header />
-      <AddTodo onSubmit={todoSubmit} />
-      <Entries entries={entries} changeEntry={entryChange} delete={deleteEntry} />
+      <AddTodo />
+      <TodoList />
     </>
   );
 }

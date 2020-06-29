@@ -1,5 +1,5 @@
 import React from 'react';
-import Entry from './components/Entry'
+import Entry from './Entry'
 
 const Entries = props => {
     const entryJSX = props.entries.map(e => (
