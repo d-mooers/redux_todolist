@@ -14,7 +14,11 @@ const Entry = ({entry, changeEntry, del, id}) => {
                 type='checkbox'
                 defaultChecked={entry.completed} 
                 onChange={() => changeEntry(id)} />
-            {entry.text}
+            <p style={{
+                maxWidth:'80%',
+                wordWrap: 'break-word'}}>
+                {entry.text}
+            </p>
             <button 
                 className='btn-x'
                 style={{
