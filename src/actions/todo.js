@@ -7,24 +7,24 @@ const addTodo = text => {
     }
 }
 
-const deleteTodo = id => {
+const deleteTodo = dateAdded => {
     return {
         type: types.DELETE_TODO,
-        id
+        dateAdded
     }
 }
 
-const toggleTodo = id => {
+const toggleTodo = dateAdded => {
     return {
         type: types.TOGGLE_TODO,
-        id 
+        dateAdded 
     }
 }
 
-const setVisibility = setting => {
+const setVisibility = filter => {
     return {
         type: types.SET_VISIBILITY,
-        setting
+        filter
     }
 }
 

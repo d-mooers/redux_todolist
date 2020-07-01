@@ -1,24 +1,37 @@
 import React from 'react'
-import Button from 'react-bootstrap/Button'
 
-const Entry = ({entry, changeEntry, del, id}) => {
+const Entry = ({entry, changeEntry, del, dateAdded}) => {
     let textStyle = () => {
         return {
-            textDecoration: entry.completed ? 'line-through' : 'none'
+            textDecoration: entry.completed ? 'line-through' : 'none',
         }
     }
     return( 
     <>
-        <p className="Entry" style={textStyle()}>
+        <div className="Entry" style={textStyle()}>
+            <div style={{
+                marginRight: '2rem',
+                borderRight: '1px solid black',
+                padding: '1rem',
+
+            }} 
+            >
+                {`${dateAdded.toLocaleTimeString().slice(0, 5)} ${dateAdded.toLocaleTimeString().slice(8)}`}
+            </div>
             <input 
                 type='checkbox'
                 defaultChecked={entry.completed} 
-                onChange={() => changeEntry(id)} />
-            <p style={{
-                maxWidth:'80%',
-                wordWrap: 'break-word'}}>
+                onChange={() => changeEntry(dateAdded)}
+                className='completedCheckBox' />
+            <div 
+                style={{
+                maxWidth:'10rem',
+                wordWrap: 'break-word',
+                fontSize: '1.25rem'
+            }}
+            >
                 {entry.text}
-            </p>
+            </div>
             <button 
                 className='btn-x'
                 style={{
@@ -26,11 +39,11 @@ const Entry = ({entry, changeEntry, del, id}) => {
                     order:2,
                     marginRight:'100px'
                 }}
-                onClick={() => del(id)}
+                onClick={() => del(dateAdded)}
             >
                 x
             </button>
-        </p>
+        </div>
     </> )
 }
 

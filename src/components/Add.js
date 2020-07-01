@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+const MAX_LEN = 175;
+
 const AddTodo = ({onSubmit}) => {
     let [textField, updateTextField] = useState("");
     let onChange = event => {
@@ -7,15 +9,25 @@ const AddTodo = ({onSubmit}) => {
     }
     let handleSubmit = e => {
         e.preventDefault();
-        console.log('Hello');
-        if (textField !== "") {
+        if (textField.trim() !== "" && textField.length <= MAX_LEN) {
             onSubmit(textField);
             updateTextField("");
         }     
     }
+    let EntryLengthCheck = () => {
+        if (textField.length > MAX_LEN) {
+            return (
+                <p style={{color:'red', maxHeight:'1rem'}} > 
+                    Please limit your entry to at most 175 characters
+                </p>
+            )
+        }
+        return null;
+    }
 
     return (
-        <form onSubmit={e => handleSubmit(e)} style={{display:'flex'}} >
+    <>
+        <form onSubmit={e => handleSubmit(e)} style={{display:'flex', margin:'1rem'}} >
             <input 
                 type='text'
                 value={textField} 
@@ -26,8 +38,10 @@ const AddTodo = ({onSubmit}) => {
             <input 
                 type='submit' 
                 name='submit' 
-                style={{cursor:'pointer', marginRight:'10px'}} /> 
+                style={{cursor:'pointer'}} /> 
         </form>
+        <EntryLengthCheck />
+    </>
     )
 }
 

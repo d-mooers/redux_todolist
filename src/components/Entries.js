@@ -5,8 +5,8 @@ const Entries = props => {
     const entryJSX = props.entries.map(e => (
         <Entry 
             entry={e} 
-            key={e.id} 
-            id={e.id} 
+            key={e.dateAdded} 
+            dateAdded={e.dateAdded} 
             changeEntry={props.changeEntry}
             del={props.delete}
         />

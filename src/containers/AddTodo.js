@@ -1,4 +1,3 @@
-import React from 'react';
 import { connect } from 'react-redux';
 import Add from '../components/Add';
 import {addTodo} from '../actions/todo'

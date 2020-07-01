@@ -7,12 +7,14 @@ import Filter from './containers/Filter'
 
 function App() {
   return (
-    <>
+    <div className='App'>
       <Header />
-      <AddTodo />
-      <Filter />
+      <div className='controls'>
+        <AddTodo />
+        <Filter />
+      </div>
       <TodoList />
-    </>
+    </div>
   );
 }
 

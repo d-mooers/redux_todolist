@@ -7,7 +7,7 @@ import todoApp from './reducers/combinedReducer'
 import { Provider } from 'react-redux';
 
 const store = createStore(todoApp);
-const unsubscribe = store.subscribe(() => console.log(store.getState()));
+//const unsubscribe = store.subscribe(() => console.log(store.getState()));
 
 ReactDOM.render(
   <Provider store={store}>

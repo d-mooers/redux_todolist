@@ -1,5 +1,4 @@
 import types from '../actions/actionTypes';
-import { uuid } from 'uuidv4';
 
 /* const initialState = {
     visibilityFilter: types.VISIBILITY_FILTERS.SHOW_ALL,
@@ -9,24 +8,25 @@ import { uuid } from 'uuidv4';
 const todos = (state=[], action) => {
     switch (action.type) {
         case types.ADD_TODO:
+            const date = new Date();
             return [
                 ...state,
                 {
                     text: action.text,
                     completed: false,
-                    id: uuid()
+                    dateAdded: date
                 }
             ]
         case types.TOGGLE_TODO:
             return state.map(entry => {
-                if (entry.id === action.id) 
+                if (entry.dateAdded === action.dateAdded) 
                     return Object.assign({}, entry, {
                         completed: !entry.completed
                     });
                 return entry;
             })
         case types.DELETE_TODO:
-            return state.filter(entry => entry.id !== action.id);
+            return state.filter(entry => entry.dateAdded !== action.dateAdded);
 
         default:
             return state;

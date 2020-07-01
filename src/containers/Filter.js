@@ -1,13 +1,16 @@
-import React from 'react';
 import {connect} from 'react-redux';
 import FilterTodos from '../components/FilterTodos';
 import {setVisibility} from '../actions/todo';
 
 const mapDispatchToProps = dispatch => ({
-    changeFilter: setting => dispatch(setVisibility(setting))
+    changeFilter: filter => dispatch(setVisibility(filter))
 });
 
+const mapStateToProps = state => ({
+    visibilityFilter: state.visibilityFilter
+})
+
 export default connect(
-    null,
+    mapStateToProps,
     mapDispatchToProps
 )(FilterTodos);

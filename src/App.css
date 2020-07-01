@@ -1,5 +1,16 @@
 .App {
   text-align: center;
+  background-color: #BFC0C0;
+  height: 100%;
+  width: 100%
+}
+
+* {
+  font-family: Alegreya;
+}
+
+html {
+  background-color: #BFC0C0;
 }
 
 .App-logo {
@@ -29,19 +40,52 @@
 .Entry {
   display: flex;
   align-items: center;
-  background: #f4f4f4;
   padding: 10px;
-  border-bottom: 1px #ccc dotted;
+  border-bottom: 1px dotted black;
+  margin: 2px;
+  border-radius: 1px;
+  border-collapse: separate;
+  /*background: #CEE7E6;*/
 }
 
 .btn-x {
-  background: #ff000f;
-  color: #ffffff;
-  border: none;
+  background: #648767;
+  color: black;
+  border: 1px solid black;
   padding: 5px 9px;
   border-radius: 50%;
   cursor: pointer;
   float: right;
+}
+
+.background-video {
+  height: 100%;
+  width: 100%;
+  float: left;
+  top: 0;
+  padding: none;
+  position: fixed;
+}
+
+.filterBtn {
+  border-color: #808B96;
+  margin: 0.25rem;
+  padding: .25rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.controls {
+  border-bottom:1px solid black;
+  padding-bottom: 1rem;
+  margin-bottom: 2px;
+}
+
+.completedCheckBox {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 10px;
+  border-radius: 10px;
 }
 
 
